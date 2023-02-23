@@ -20,38 +20,40 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int count = 0;
-
-  void increment() {
-    setState(() {
-      count = count + 1;
-      print(count);
-    });
-  }
-
+  TextEditingController title = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter'),
+        title: Text("Flutter"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        child: ListView(
+          scrollDirection: Axis.vertical,
           children: [
-            Text(
-              'You have pushed button times',
-              style: TextStyle(
-                fontSize: 25.0,
-              ),
+            ListTile(
+              leading: Icon(Icons.brightness_auto),
+              title: Text('Brightness Auto'),
+              subtitle: Text('Change the Brightness'),
+              trailing: Icon(Icons.menu),
+              onTap: () {},
             ),
-            Text('$count', style: Theme.of(context).textTheme.displayLarge)
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.image),
+              title: Text('Change Image'),
+              subtitle: Text('Change the Image'),
+              trailing: Icon(Icons.menu),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.keyboard),
+              title: Text('Keyboard Layout'),
+              subtitle: Text('Change the Keyboard Layout'),
+              trailing: Icon(Icons.menu),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: increment,
       ),
     );
   }

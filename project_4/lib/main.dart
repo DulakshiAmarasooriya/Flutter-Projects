@@ -21,10 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+class MyHomePage extends StatelessWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -44,4 +41,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
 }
